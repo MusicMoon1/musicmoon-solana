@@ -1,0 +1,90 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 20% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 17% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 17% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 72 100% 77%;
+    --primary-foreground: 240 15% 10%;
+
+    --secondary: 72 80% 70%;
+    --secondary-foreground: 240 15% 10%;
+
+    --muted: 240 10% 15%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 72 100% 85%;
+    --accent-foreground: 240 15% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 72 100% 77%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #e8ff8d, #d9ee74);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient {
+  background: linear-gradient(to right, rgba(232, 255, 141, 0.2), rgba(217, 238, 116, 0.2));
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #e8ff8d;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(232, 255, 141, 0.3) 0%, rgba(217, 238, 116, 0.1) 50%, rgba(0, 0, 0, 0) 70%);
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(30px);
+}
